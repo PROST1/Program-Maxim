@@ -1,8 +1,9 @@
 #include "Seconds.h"
-
+const int second_in_hour = 3600;
+const min_in_hour = 60;
 int seconds(const int hour, const int minutes)
 {
-	return hour * 3600 + minutes * 60;
+	return hour * second_in_hour + minutes * min_in_hour;
 }
 int seconds2(const int hour, const int minutes)
 {
@@ -15,7 +16,7 @@ int seconds2(const int hour, const int minutes)
 		throw 1;
 	}
 }
-int seconds3(const int hour, const int minutes)
+int seconds3(const unsigned int hour, const unsigned int minutes)
 {
 	if (hour >= 0 && minutes >= 0)
 	{
@@ -26,7 +27,7 @@ int seconds3(const int hour, const int minutes)
 		throw invalid_argument{ "Error! Minutes/hours less then zero, standard exception" };
 	}
 }
-int seconds4(const int hour, const int minutes)
+int seconds4(const unsigned int hour, const unsigned int minutes)
 {
 	if (hour >= 0 && minutes >= 0)
 	{
@@ -37,7 +38,7 @@ int seconds4(const int hour, const int minutes)
 		throw empty_class();
 	}
 }
-int seconds5(const int hour, const int minutes)
+int seconds5(const unsigned int hour, const unsigned int minutes)
 {
 	if (hour >= 0 && minutes >= 0)
 	{
@@ -48,7 +49,7 @@ int seconds5(const int hour, const int minutes)
 		throw independent_class("Error! Minutes/hours less than 0, independent class with function parameter fields");
 	}
 }
-int seconds6(const int hour, const int minutes)
+int seconds6(const unsigned int hour, const unsigned int minutes)
 {
 	if (hour >= 0 && minutes >= 0)
 	{
