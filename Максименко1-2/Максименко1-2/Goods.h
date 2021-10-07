@@ -11,6 +11,9 @@ private:
 	unsigned int price;
 	unsigned int quantity;
 	string invoice_number;
+	void set_name(const string& name);
+	void set_data(const string& data);
+	void set_invoice_number(const string& invoice_number);
 public:
 	/**
 	 \brief	Конструктор с параметрами.
@@ -36,22 +39,22 @@ public:
 	 \brief	Возвращает имя
 	 \returns	name.
 	 */
-	string get_name() const;
+	string& get_name() const;
 	/**
 	 \brief	Возвращает дату
 	 \returns	data.
 	 */
-	string get_data() const;
+	string& get_data() const;
 	/**
 	 \brief	Возвращает накладную
 	 \returns	invoice_number.
 	 */
-	string get_invoice_number() const;
+	string& get_invoice_number() const;
 	/**
 	 \brief	Возвращает цену
 	 \returns	price.
 	 */
-	string get_price()const;
+	string& get_price()const;
 	/**
 	 \brief	Возвращает количество
 	 \returns	quantity.

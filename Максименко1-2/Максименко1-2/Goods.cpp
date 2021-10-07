@@ -1,18 +1,18 @@
 #include "Goods.h"
 
-string Goods::get_name() const
+string& Goods::get_name() const
 {
 	return name;
 }
-string Goods::get_data() const
+string& Goods::get_data() const
 {
 	return data;
 }
-string Goods::get_invoice_number() const
+string& Goods::get_invoice_number() const
 {
 	return invoice_number;
 }
-string Goods::get_price()const
+string& Goods::get_price()const
 {
 	return to_string(price);
 }
@@ -37,6 +37,39 @@ void Goods::set_reduse_goods(const unsigned int quantity)
 	else
 	{
 		throw invalid_argument{ "“овара уменьшилось больше, чем есть на складе" };
+	}
+}
+void Goods::set_name(const string& name)
+{
+	if (name != "")
+	{
+		this->name = name;
+	}
+	else
+	{
+		throw invalid_argument{ "нужно ввести имя" };
+	}
+}
+void Goods::set_data(const string& data)
+{
+	if (data != "")
+	{
+		this->data = data;
+	}
+	else
+	{
+		throw invalid_argument{ "нужно ввести дату" };
+	}
+}
+void Goods::set_invoice_number(const string& invoice_number)
+{
+	if (invoice_number != "")
+	{
+		this->invoice_number = invoice_number;
+	}
+	else
+	{
+		throw invalid_argument{ "нужно ввести номер" };
 	}
 }
 ostream& operator<<(ostream& out, const Goods& gds)
