@@ -26,30 +26,15 @@ Triad::Triad(const int x, const int y, const int z)
 }
 Triad Triad::operator+(const Triad& other)
 {
-	Triad temp;
-	temp.x = this->x + other.x;
-	temp.y = this->y + other.y;
-	temp.z = this->z + other.z;
-	return temp;
+	return Triad (this->x + other.x, this->y + other.y, this->z + other.z);
 }
 Triad Triad::operator*(const Triad& other)
 {
-	Triad temp;
-	temp.x = this->x * other.x;
-	temp.y = this->y * other.y;
-	temp.z = this->z * other.z;
-	return temp;
+	return Triad (this->x * other.x, this->y * other.y, this->z * other.z);
 }
 bool Triad::operator==(const Triad& other)
 {
-	if (this->x == other.x && this->y == other.y && this->z == other.z)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+return abs(this->x - other.x + this->y - other.y + this->z - other.z) < std::numeric_limits<double>::epsilon();
 }
 ostream& operator<<(ostream& out, const Triad& tr)
 {

@@ -15,11 +15,7 @@ Vector3D::Vector3D(const int x, const int y, const int z)
 } 
 Vector3D Vector3D:: operator+(const Vector3D& other)
 {
-	Vector3D temp;
-	temp.x = this->x + other.x;
-	temp.y = this->y + other.y;
-	temp.z = this->z + other.z;
-	return temp;
+	return Vector3D(this->x + other.x, this->y + other.y, this->z + other.z);
 }
 int Vector3D::operator*(const Vector3D& other)
 {
